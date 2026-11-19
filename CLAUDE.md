@@ -17,7 +17,7 @@ Small Express 4 API using CommonJS (`require`, `sourceType: "script"`, not ES mo
 - use snake_case, not CamelCase
 - `server.js` — builds the Express `app`, mounts routers (`/users`, `/health`), and exports `app`. It only calls `listen()` when run directly (`require.main === module`), so tests import `app` with supertest without opening a port. Keep that guard.
 - `routes/` — one router file per resource, mounted in `server.js`. New resources need a router file plus a `app.use(...)` line there.
-- `db/store.js` — in-memory data store standing in for a database. Routes call its functions rather than touching data directly. State resets on restart and is shared across tests in the same process (e.g. `nextId` keeps incrementing).
+- `db/store.js` — in-memory data store standing in for a database. Routes call its functions rather than touching data directly. State resets on restart and is shared across tests in the same process.
 - `tests/` — supertest-based tests against the exported `app`.
 
 Config goes in `.env` (git-ignored); `.env.example` is the template.
@@ -26,5 +26,5 @@ Config goes in `.env` (git-ignored); `.env.example` is the template.
 
 - ESLint ignores unused args named `_`, `req`, `res`, `next`.
 - Validation errors return `{ error: "<message>" }` with 400/404 status codes.
-- use spaces not tabs
+- use spaces, not tabs
 
