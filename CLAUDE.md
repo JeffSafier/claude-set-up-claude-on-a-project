@@ -11,8 +11,6 @@ Express API starts the server.
 - `node --test tests/users.test.js` — run a single test file; add `--test-name-pattern="<regex>"` to run one test
 - `npm run lint` — ESLint (`eslint:recommended`)
 
-CI (`.github/workflows/ci.yml`) runs `npm run lint` then `npm test` on Node 22 for every push and PR, so both must pass.
-
 ## Architecture
 
 Small Express 4 API using CommonJS (`require`, `sourceType: "script"`, not ES modules).
