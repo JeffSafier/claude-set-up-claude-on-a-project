@@ -14,7 +14,6 @@ CI (`.github/workflows/ci.yml`) runs `npm run lint` then `npm test` on Node 22 f
 ## Architecture
 
 Small Express 4 API using CommonJS (`require`, `sourceType: "script"`, not ES modules).
-- use snake_case, not CamelCase
 - `server.js` — builds the Express `app`, mounts routers (`/users`, `/health`), and exports `app`. It only calls `listen()` when run directly (`require.main === module`), so tests import `app` with supertest without opening a port. Keep that guard.
 - `routes/` — one router file per resource, mounted in `server.js`. New resources need a router file plus a `app.use(...)` line there.
 - `db/store.js` — in-memory data store standing in for a database. Routes call its functions rather than touching data directly.
@@ -27,4 +26,4 @@ Config goes in `.env` (git-ignored); `.env.example` is the template.
 - ESLint ignores unused args named `_`, `req`, `res`, `next`.
 - Validation errors return `{ error: "<message>" }` with 400/404 status codes.
 - use spaces, not tabs
-
+- **Package Manager:** Use `npm`, not `pnpm` or `yarn`.
