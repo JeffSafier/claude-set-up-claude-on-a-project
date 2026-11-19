@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Express API starts the server.
+
 ## Commands
 
 - `npm run dev` — start the API with `node --watch` on http://localhost:3000 (`PORT` env var overrides)
