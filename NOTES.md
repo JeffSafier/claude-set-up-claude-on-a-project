@@ -9,7 +9,7 @@
 
 ## Conventions
 
-- Added use spaces not tabs and Use snake_case for variables
+- Added Use X, not Y convention
 
 ## Permissions
 
